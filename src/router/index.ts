@@ -13,7 +13,7 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: LoginPage,
-    beforeEnter: (to: any, from: any, next: any) => {
+    beforeEnter: (_to: any, _from: any, next: any) => {
       // If user is already logged in, redirect to appropriate page
       if (store.isLoggedIn) {
         if (store.userRole === 'user') {
@@ -30,7 +30,7 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardPage,
-    beforeEnter: (to: any, from: any, next: any) => {
+    beforeEnter: (_to: any, _from: any, next: any) => {
       // If user is not logged in, redirect to login
       if (!store.isLoggedIn) {
         next('/login')
@@ -43,7 +43,7 @@ const routes = [
     path: '/forms',
     name: 'UserForms',
     component: UserFormPage,
-    beforeEnter: (to: any, from: any, next: any) => {
+    beforeEnter: (_to: any, _from: any, next: any) => {
       // Only allow logged in users
       if (!store.isLoggedIn) {
         next('/login')
