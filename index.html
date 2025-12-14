@@ -5,8 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/Breads-Hope/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>hope</title>
-    <script type="module" crossorigin src="/Breads-Hope/assets/index-BbpZrP-L.js"></script>
+    <title>HOPE</title>
+    <script>
+      // GitHub Pages SPA redirect handling
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/Breads-Hope/assets/index-BYhtbefE.js"></script>
     <link rel="stylesheet" crossorigin href="/Breads-Hope/assets/index-DRVSYe6R.css">
   </head>
   <body>
