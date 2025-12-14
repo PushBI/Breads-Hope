@@ -18,9 +18,13 @@
 
       <!-- Right side - Login Form -->
       <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
-        <div class="text-center mb-8">
-          <h1 class="text-3xl font-bold text-gray-800 mb-2">HOPE</h1>
-          <p class="text-gray-500 text-sm">Welcome back! Please login to your account.</p>
+        <div class="text-center mb-8 flex flex-col items-center">
+          <img
+            src="/breads-logo.png"
+            alt="BREADS Logo"
+            class="h-16 w-auto mb-2"
+            @error="handleImageError"
+          />
         </div>
         <div class="flex justify-center mb-6">
           <div class="flex items-center bg-gray-200 rounded-full p-1">
@@ -192,6 +196,11 @@ const handleAdminLogin = () => {
   setTimeout(() => {
     router.push('/dashboard')
   }, 500)
+}
+
+const handleImageError = (event) => {
+  // Fallback to text if image fails to load
+  event.target.outerHTML = '<h1 class="text-3xl font-bold text-gray-800 mb-2">BREADS</h1>'
 }
 </script>
 

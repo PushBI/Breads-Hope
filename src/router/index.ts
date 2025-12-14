@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '../components/LoginPage.vue'
 import DashboardPage from '../components/DashboardPage.vue'
-import UserFormPage from '../components/UserFormPage.vue'
+import FormButtonPage from '../components/FormButtonPage.vue'
+import AddSchoolDetailsPage from '../components/AddSchoolDetailsPage.vue'
+import MonthlyReportPage from '../components/MonthlyReportPage.vue'
+import MonthlyPlanPage from '../components/MonthlyPlanPage.vue'
+import ConsolidatedNarrativePage from '../components/ConsolidatedNarrativePage.vue'
 import { store } from '../store'
 
 const routes = [
@@ -42,7 +46,59 @@ const routes = [
   {
     path: '/forms',
     name: 'UserForms',
-    component: UserFormPage,
+    component: FormButtonPage,
+    beforeEnter: (_to: any, _from: any, next: any) => {
+      // Only allow logged in users
+      if (!store.isLoggedIn) {
+        next('/login')
+      } else {
+        next()
+      }
+    }
+  },
+  {
+    path: '/school-forms',
+    name: 'SchoolFormsCreate',
+    component: AddSchoolDetailsPage,
+    beforeEnter: (_to: any, _from: any, next: any) => {
+      // Only allow logged in users
+      if (!store.isLoggedIn) {
+        next('/login')
+      } else {
+        next()
+      }
+    }
+  },
+  {
+    path: '/monthly-report',
+    name: 'MonthlyReport',
+    component: MonthlyReportPage,
+    beforeEnter: (_to: any, _from: any, next: any) => {
+      // Only allow logged in users
+      if (!store.isLoggedIn) {
+        next('/login')
+      } else {
+        next()
+      }
+    }
+  },
+  {
+    path: '/monthly-plan',
+    name: 'MonthlyPlan',
+    component: MonthlyPlanPage,
+    beforeEnter: (_to: any, _from: any, next: any) => {
+      // Only allow logged in users
+      if (!store.isLoggedIn) {
+        next('/login')
+      } else {
+        next()
+      }
+    }
+  },
+  {
+    path: '/consolidated-narrative',
+    name: 'ConsolidatedNarrative',
+    component: ConsolidatedNarrativePage,
     beforeEnter: (_to: any, _from: any, next: any) => {
       // Only allow logged in users
       if (!store.isLoggedIn) {

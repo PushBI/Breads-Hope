@@ -4,7 +4,14 @@
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <div class="flex-shrink-0 lg:-ml-6">
-            <span class="text-white text-2xl font-bold" style="color: white !important;">HOPE</span>
+            <router-link to="/forms" class="flex items-center hover:opacity-90 transition-opacity">
+              <img
+                src="/breads-logo.png"
+                alt="BREADS Logo"
+                class="h-12 w-auto cursor-pointer"
+                @error="handleImageError"
+              />
+            </router-link>
           </div>
           <!-- Admin Navigation -->
           <div v-if="store.userRole === 'admin'" class="hidden md:block">
@@ -19,7 +26,7 @@
           <!-- User Navigation -->
           <div v-if="store.userRole === 'user'" class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <a href="/forms" class="text-white hover:bg-red-900 px-3 py-2 rounded-md text-sm font-medium">My Forms</a>
+              <router-link to="/forms" class="text-white hover:bg-red-900 px-3 py-2 rounded-md text-sm font-medium">My Forms</router-link>
               <a href="#" class="text-white hover:bg-red-900 px-3 py-2 rounded-md text-sm font-medium">Help</a>
             </div>
           </div>
@@ -59,7 +66,7 @@
 
         <!-- User Mobile Menu -->
         <template v-if="store.userRole === 'user'">
-          <a href="/forms" class="text-white hover:bg-red-900 block px-3 py-2 rounded-md text-base font-medium">My Forms</a>
+          <router-link to="/forms" class="text-white hover:bg-red-900 block px-3 py-2 rounded-md text-base font-medium">My Forms</router-link>
           <a href="#" class="text-white hover:bg-red-900 block px-3 py-2 rounded-md text-base font-medium">Help</a>
         </template>
 
@@ -94,10 +101,21 @@ export default defineComponent({
       router.push('/login');
     };
 
+    const handleImageError = (event: Event) => {
+      const target = event.target as HTMLImageElement;
+      target.style.display = 'none';
+      // Fallback to text if image fails to load
+      const fallback = document.createElement('span');
+      fallback.textContent = 'BREADS';
+      fallback.className = 'text-white text-2xl font-bold';
+      target.parentElement?.appendChild(fallback);
+    };
+
     return {
       isMobileMenuOpen,
       toggleMobileMenu,
       handleLogout,
+      handleImageError,
       store,
     };
   },
