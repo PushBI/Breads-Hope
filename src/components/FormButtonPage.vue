@@ -10,7 +10,7 @@
       </div>
 
       <!-- Form Buttons -->
-      <div class="mb-8 space-y-4 flex flex-col items-start">
+      <div class="mb-8 space-y-4 flex flex-col items-start sm:items-center">
         <button
           @click="openForm"
           class="group relative w-full sm:w-80 bg-gradient-to-r from-red-900 to-red-800 text-white font-bold py-4 px-10 rounded-xl hover:from-red-800 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3 overflow-hidden"

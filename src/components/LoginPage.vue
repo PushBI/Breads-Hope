@@ -1,20 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex items-center justify-center">
     <div class="w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden md:flex">
-      <!-- Left side - Image -->
-      <div class="hidden md:block md:w-1/2 bg-gradient-to-br from-red-950 to-red-800 relative">
-        <img
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=1000&fit=crop"
-          alt="Hope"
-          class="w-full h-full object-cover opacity-80"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
-          <div class="text-white">
-            <h2 class="text-4xl font-bold mb-2">HOPE</h2>
-            <p class="text-lg">Empowering communities, transforming lives</p>
-          </div>
-        </div>
-      </div>
+      <!-- Left side - Gradient Background -->
+      <div class="hidden md:block md:w-1/2 bg-gradient-to-br from-red-950 to-red-800"></div>
 
       <!-- Right side - Login Form -->
       <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
@@ -106,7 +94,7 @@
 
         <!-- Footer -->
         <div class="mt-6 text-center text-gray-400 text-xs">
-          <p>© 2024 HOPE Platform. All rights reserved.</p>
+          <!-- <p>© 2024 HOPE Platform. All rights reserved.</p> -->
         </div>
       </div>
     </div>
