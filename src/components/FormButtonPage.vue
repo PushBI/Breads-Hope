@@ -39,12 +39,12 @@
         </button>
 
         <button
-          @click="openConsolidatedNarrative"
+          @click="openAwarenessProgramme"
           class="group relative w-full sm:w-80 bg-gradient-to-r from-red-900 to-red-800 text-white font-bold py-4 px-6 rounded-xl hover:from-red-800 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2 overflow-hidden"
         >
           <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           <span class="material-icons text-xl relative z-10">assignment</span>
-          <span class="text-base relative z-10">Consolidated Programme</span>
+          <span class="text-base relative z-10">Awareness Programme</span>
         </button>
       </div>
     </div>
@@ -72,8 +72,8 @@ const openMonthlyPlan = () => {
   router.push('/monthly-plan');
 };
 
-// Function to navigate to consolidated narrative
-const openConsolidatedNarrative = () => {
+// Function to navigate to awareness programme
+const openAwarenessProgramme = () => {
   router.push('/consolidated-narrative');
 };
 </script>

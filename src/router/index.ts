@@ -97,7 +97,7 @@ const routes = [
   },
   {
     path: '/consolidated-narrative',
-    name: 'ConsolidatedNarrative',
+    name: 'AwarenessProgramme',
     component: ConsolidatedNarrativePage,
     beforeEnter: (_to: any, _from: any, next: any) => {
       // Only allow logged in users

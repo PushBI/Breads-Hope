@@ -5,8 +5,8 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Page Header -->
       <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-800">Consolidated Narrative Programme</h1>
-        <p class="text-gray-600 mt-2">Submit consolidated narrative programme report</p>
+        <h1 class="text-3xl font-bold text-gray-800">Awareness Programme</h1>
+        <p class="text-gray-600 mt-2">Submit Awareness programme report</p>
       </div>
 
       <!-- Form Card -->
@@ -195,7 +195,7 @@
         v-if="showNotification"
         class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-semibold"
       >
-        Consolidated narrative programme submitted successfully!
+        Awareness programme submitted successfully!
       </div>
     </Transition>
   </div>
@@ -241,7 +241,7 @@ const updateMonth = () => {
 }
 
 const handleSubmit = () => {
-  console.log('Consolidated Narrative Programme Submitted:', formData)
+  console.log('Awareness Programme Submitted:', formData)
   showNotification.value = true
   setTimeout(() => {
     showNotification.value = false
