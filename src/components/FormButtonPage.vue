@@ -35,7 +35,7 @@
         >
           <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           <span class="material-icons text-2xl relative z-10">calendar_today</span>
-          <span class="text-lg relative z-10">My Monthly Plan</span>
+          <span class="text-lg relative z-10">My Monthly Report</span>
         </button>
 
         <button

@@ -520,38 +520,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Group Statistics Section -->
-            <div class="mb-8">
-              <h3 class="text-lg font-semibold text-gray-700 mb-4">Group Statistics</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">
-                    Total Number of Groups <span class="text-red-500">*</span>
-                  </label>
-                  <input
-                    v-model.number="formData.totalGroups"
-                    type="number"
-                    min="1"
-                    required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-900 focus:border-transparent"
-                    placeholder="Enter number of groups"
-                  />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">
-                    Strength in Each Group
-                  </label>
-                  <input
-                    v-model="strengthPerGroup"
-                    type="number"
-                    readonly
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 cursor-not-allowed"
-                    placeholder="Auto-calculated"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Stepper Navigation -->
@@ -664,8 +632,7 @@ const formData = reactive({
   class8Total: '',
   class9Boys: '',
   class9Girls: '',
-  class9Total: '',
-  totalGroups: ''
+  class9Total: ''
 });
 
 const submissions = ref<any[]>([]);
@@ -765,14 +732,6 @@ const grandTotal = computed(() => {
   return grandTotalBoys.value + grandTotalGirls.value;
 });
 
-// Strength per group computed property (ceiling of grand total / total groups)
-const strengthPerGroup = computed(() => {
-  const total = grandTotal.value;
-  const groups = Number(formData.totalGroups) || 0;
-  if (groups === 0) return 0;
-  return Math.ceil(total / groups);
-});
-
 const showNotification = (message: string, type = 'success') => {
   notification.value = {
     show: true,
@@ -829,7 +788,6 @@ const resetForm = () => {
   formData.class9Boys = '';
   formData.class9Girls = '';
   formData.class9Total = '';
-  formData.totalGroups = '';
   availableDistricts.value = [];
   currentStep.value = 1;
   router.push('/forms');
